@@ -1,37 +1,110 @@
 <main class="container my-4">
   <h1>Meldingen</h1>
 
-  @if(fout()){
-  <div class="alert alert-danger" role="alert">{{ fout() }}</div>
+  @if (fout()) {
+    <div class="alert alert-danger" role="alert">{{ fout() }}</div>
   }
 
-  <div class="reponsive-table">
-    <table class="table table-striped table-hover allign-middle">
+  <div class="table-responsive">
+    <!--TODO: Filters omwisselen en vast laten stellen (Voelt natuurlijker) + Mooie knop om filters te wissen-->
+    <div class="action-buttons">
+      @if (filterActief()) {
+        <button
+          type="button"
+          (click)="pasFilterToe({ status: null, categorie: null })"
+          class="btn btn-secondary mb-3"
+        >
+          Filter wissen
+        </button>
+      }
+      <button
+        type="button"
+        (click)="openFilterModal()"
+        class="btn btn-primary mb-3 icon-btn"
+        aria-label="Filteren"
+        title="Filteren"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="16"
+          height="16"
+          fill="currentColor"
+          class="bi bi-funnel-fill"
+          viewBox="0 0 16 16"
+        >
+          <path
+            d="M1.5 1.5A.5.5 0 0 1 2 1h12a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.128.334L10 8.692V13.5a.5.5 0 0 1-.342.474l-3 1A.5.5 0 0 1 6 14.5V8.692L1.628 3.834A.5.5 0 0 1 1.5 3.5v-2z"
+          />
+        </svg>
+      </button>
+    </div>
+    <table class="table table-striped table-hover align-middle">
       <caption>
         Een overzicht van alle meldingen
       </caption>
       <thead>
         <tr>
-          <th scope="col">Datum</th>
-          <th scope="col">Titel</th>
-          <th scope="col">Categorie</th>
-          <th scope="col">Status</th>
+          <th scope="col" [attr.aria-sort]="ariaSort('datum')">
+            <button
+              type="button"
+              class="btn btn-link p-0 text-decoration-none"
+              (click)="sorteerMeldingen('datum')"
+            >
+              Datum <span aria-hidden="true">{{ pijl('datum') }}</span>
+            </button>
+          </th>
+          <th scope="col" [attr.aria-sort]="ariaSort('titel')">
+            <button
+              type="button"
+              class="btn btn-link p-0 text-decoration-none"
+              (click)="sorteerMeldingen('titel')"
+            >
+              Titel <span aria-hidden="true">{{ pijl('titel') }}</span>
+            </button>
+          </th>
+          <th scope="col" [attr.aria-sort]="ariaSort('categorie')">
+            <button
+              type="button"
+              class="btn btn-link p-0 text-decoration-none"
+              (click)="sorteerMeldingen('categorie')"
+            >
+              Categorie <span aria-hidden="true">{{ pijl('categorie') }}</span>
+            </button>
+          </th>
+          <th scope="col" [attr.aria-sort]="ariaSort('status')">
+            <button
+              type="button"
+              class="btn btn-link p-0 text-decoration-none"
+              (click)="sorteerMeldingen('status')"
+            >
+              Status <span aria-hidden="true">{{ pijl('status') }}</span>
+            </button>
+          </th>
         </tr>
       </thead>
       <tbody>
-        @for(m of meldingen(); track m.id){
-        <tr>
-          <td>{{ m.datum | date: 'dd-MM-yyyy HH:mm' }}</td>
-          <th scope="row">{{m.titel}}</th>
-          <td>{{m.categorie}}</td>
-          <td>{{m.status}}</td>
-        </tr>
-        } @empty{
-        <tr>
-          <td colspan="4">Geen meldingen gevonden</td>
-        </tr>
+        @for (m of gesorteerdeMeldingen(); track m.id) {
+          <tr>
+            <td>{{ m.datum | date: 'dd-MM-yyyy HH:mm' }}</td>
+            <th scope="row">{{ m.titel }}</th>
+            <td>{{ m.categorie }}</td>
+            <td><app-status-badge [status]="m.status"></app-status-badge></td>
+          </tr>
+        } @empty {
+          <tr>
+            <td colspan="4">Geen meldingen gevonden</td>
+          </tr>
         }
       </tbody>
     </table>
   </div>
+  <!--TODO: Filter overlay maken, staat nu onder de tabel -->
+  @if (filterModalOpen()) {
+    <app-filter-overlay
+      (applyFilter)="pasFilterToe($event)"
+      (close)="filterModalOpen.set(false)"
+      [statusOpties]="statusOpties()"
+      [categorieOpties]="categorieOpties()"
+    ></app-filter-overlay>
+  }
 </main>

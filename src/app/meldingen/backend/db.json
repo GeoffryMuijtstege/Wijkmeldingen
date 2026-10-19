@@ -6,7 +6,7 @@
       "categorie": "overlast",
       "status": "nieuw",
       "datum": "2026-10-12T23:45:00",
-      "omschrijving": "Harde muziek en veel lawaai vanuit een appartement aan de Voorbeeldstraat. Dit is al de derde avond achter elkaar."
+      "omschrijving": "Harde muziek en veel lawaai vanuit een appartement aan de Voorbeeldstraat."
     },
     {
       "id": 2,
@@ -14,7 +14,7 @@
       "categorie": "diefstal",
       "status": "in behandeling",
       "datum": "2026-10-13T08:20:00",
-      "omschrijving": "Zwarte damesfiets met rode fietstassen, aan het hek van de fietsenstalling gebonden. Slot is doorgeknipt."
+      "omschrijving": "Zwarte damesfiets met rode fietstassen."
     },
     {
       "id": 3,
@@ -22,7 +22,7 @@
       "categorie": "verdacht",
       "status": "nieuw",
       "datum": "2026-10-14T19:10:00",
-      "omschrijving": "Persoon in donkere jas blijft langere tijd bij de pinautomaat staan en kijkt mee over de schouders van klanten."
+      "omschrijving": "Persoon in donkere jas blijft langere tijd bij de pinautomaat staan en kijkt om zich heen. Mogelijk oplichting."
     },
     {
       "id": 4,
@@ -30,7 +30,7 @@
       "categorie": "vernieling",
       "status": "afgehandeld",
       "datum": "2026-10-09T07:05:00",
-      "omschrijving": "Glazen wand van de bushalte aan de Parklaan is kapotgeslagen. Gemeente is ingelicht en heeft de scherven opgeruimd."
+      "omschrijving": "Glazen ruit van de bushalte aan de Hoofdstraat is ingeslagen. Er zijn geen getuigen."
     },
     {
       "id": 5,
@@ -38,15 +38,15 @@
       "categorie": "verkeer",
       "status": "in behandeling",
       "datum": "2026-10-10T08:35:00",
-      "omschrijving": "Ouders parkeren in de bocht voor de school, waardoor kinderen slecht zichtbaar zijn bij het oversteken."
+      "omschrijving": "Ouders die hun kinderen naar school brengen parkeren op de stoep en blokkeren het zicht voor andere weggebruikers."
     },
     {
       "id": 6,
       "titel": "Vermiste hond",
-      "categorie": "vermissing",
+      "categorie": "vermist",
       "status": "nieuw",
       "datum": "2026-10-15T16:50:00",
-      "omschrijving": "Bruine labrador met rood halsband en naamplaatje 'Bobby' is tijdens een wandeling in het park weggelopen."
+      "omschrijving": "Bruin zwarte labrador, luistert naar de naam 'Max', vermist sinds 15 oktober. Laatste gezien in de buurt van het park."
     },
     {
       "id": 7,
@@ -54,7 +54,7 @@
       "categorie": "vernieling",
       "status": "nieuw",
       "datum": "2026-10-16T06:40:00",
-      "omschrijving": "De muren van de fietstunnel zijn volgespoten met graffiti. Een deel bevat beledigende teksten."
+      "omschrijving": "De muren van de fietstunnel zijn volgespoten met graffiti."
     },
     {
       "id": 8,

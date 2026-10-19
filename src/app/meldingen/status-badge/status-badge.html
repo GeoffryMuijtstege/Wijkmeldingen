@@ -1,0 +1,7 @@
+@if (status() === Status.Nieuw) {
+  <span class="badge bg-primary">Nieuw</span>
+} @else if (status() === Status.InBehandeling) {
+  <span class="badge bg-warning text-dark">In behandeling</span>
+} @else {
+  <span class="badge bg-success">Afgehandeld</span>
+}
