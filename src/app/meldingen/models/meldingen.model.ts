@@ -8,7 +8,7 @@ export interface Melding {
 }
 
 export enum Status {
-  Nieuw = 'nieuw',
-  InBehandeling = 'in behandeling',
-  Afgehandeld = 'afgehandeld',
+  Nieuw = 'Nieuw',
+  InBehandeling = 'In behandeling',
+  Afgehandeld = 'Afgehandeld',
 }

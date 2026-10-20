@@ -1,6 +1,5 @@
-import { Component, output, inject, input } from '@angular/core';
+import { Component, output, input } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { MeldingenService } from '../services/meldingen.service';
 
 export interface MeldingFilter {
   status: string | null;
@@ -18,7 +17,6 @@ export class FilterOverlay {
   categorieOpties = input<string[]>([]);
   selectedStatus: string | null = null;
   selectedCategorie: string | null = null;
-  private meldingenService = inject(MeldingenService);
 
   close = output<void>();
   applyFilter = output<MeldingFilter>();

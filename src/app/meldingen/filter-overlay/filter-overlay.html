@@ -1,6 +1,6 @@
 <div>
   <h2>Filteren</h2>
-  <form>
+  <form class="d-flex flex-column gap-3">
     <!--TODO: Filters die geselecteerd zijn altijd laten weergeven als de overlay opnieuw geopend wordt -->
     <div class="form-group">
       <label for="status">Status:</label>
@@ -18,7 +18,9 @@
         }
       </select>
     </div>
-    <button type="button" class="btn btn-primary" (click)="onApply()">Filteren</button>
-    <button type="button" class="btn btn-secondary" (click)="onClose()">Sluiten</button>
+    <div class="d-flex gap-2">
+      <button type="button" class="btn btn-primary" (click)="onApply()">Filteren</button>
+      <button type="button" class="btn btn-secondary" (click)="onClose()">Sluiten</button>
+    </div>
   </form>
 </div>

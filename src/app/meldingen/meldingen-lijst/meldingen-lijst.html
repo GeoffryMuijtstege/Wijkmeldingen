@@ -6,7 +6,7 @@
   }
 
   <div class="table-responsive">
-    <!--TODO: Filters omwisselen en vast laten stellen (Voelt natuurlijker) + Mooie knop om filters te wissen-->
+    <!-- TODO: Filters omwisselen en vast laten stellen (Voelt natuurlijker) + Mooie knop om filters te wissen -->
     <div class="action-buttons">
       @if (filterActief()) {
         <button
@@ -50,7 +50,7 @@
               class="btn btn-link p-0 text-decoration-none"
               (click)="sorteerMeldingen('datum')"
             >
-              Datum <span aria-hidden="true">{{ pijl('datum') }}</span>
+              Datum <span aria-hidden="true">{{ sorteerPijl('datum') }}</span>
             </button>
           </th>
           <th scope="col" [attr.aria-sort]="ariaSort('titel')">
@@ -59,7 +59,7 @@
               class="btn btn-link p-0 text-decoration-none"
               (click)="sorteerMeldingen('titel')"
             >
-              Titel <span aria-hidden="true">{{ pijl('titel') }}</span>
+              Titel <span aria-hidden="true">{{ sorteerPijl('titel') }}</span>
             </button>
           </th>
           <th scope="col" [attr.aria-sort]="ariaSort('categorie')">
@@ -68,7 +68,7 @@
               class="btn btn-link p-0 text-decoration-none"
               (click)="sorteerMeldingen('categorie')"
             >
-              Categorie <span aria-hidden="true">{{ pijl('categorie') }}</span>
+              Categorie <span aria-hidden="true">{{ sorteerPijl('categorie') }}</span>
             </button>
           </th>
           <th scope="col" [attr.aria-sort]="ariaSort('status')">
@@ -77,7 +77,7 @@
               class="btn btn-link p-0 text-decoration-none"
               (click)="sorteerMeldingen('status')"
             >
-              Status <span aria-hidden="true">{{ pijl('status') }}</span>
+              Status <span aria-hidden="true">{{ sorteerPijl('status') }}</span>
             </button>
           </th>
         </tr>

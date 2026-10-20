@@ -1,1 +1,27 @@
+<nav class="navbar navbar-expand bg-light" aria-label="Hoofdmenu">
+  <div class="container">
+    <a class="navbar-brand" routerLink="/">Wijkmeldingen</a>
+    <ul class="navbar-nav me-auto flex-row gap-3">
+      <li class="nav-item">
+        <a
+          class="nav-link"
+          routerLink="/meldingen"
+          routerLinkActive="active"
+          ariaCurrentWhenActive="page"
+          >Meldingen</a
+        >
+      </li>
+      <li class="nav-item">
+        <a
+          class="nav-link"
+          routerLink="/meldingen/indienen"
+          routerLinkActive="active"
+          ariaCurrentWhenActive="page"
+          >Melding indienen</a
+        >
+      </li>
+    </ul>
+  </div>
+</nav>
+
 <router-outlet />

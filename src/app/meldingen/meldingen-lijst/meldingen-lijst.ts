@@ -77,7 +77,7 @@ export class MeldingenLijst {
     }
   }
 
-  pijl(veld: keyof Melding): string {
+  sorteerPijl(veld: keyof Melding): string {
     if (this.gesorteerdOpType() !== veld) return '';
     return this.sorteerWaarde() === 'asc' ? '▲' : '▼';
   }
