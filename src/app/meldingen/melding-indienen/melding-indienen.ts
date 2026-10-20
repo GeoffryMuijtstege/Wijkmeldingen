@@ -35,6 +35,7 @@ export class MeldingIndienen {
       return;
     }
     if (this.form.invalid) {
+      this.form.markAllAsTouched();
       this.fout.set(
         'Controleer de ingevoerde gegevens. Alle velden zijn verplicht en moeten voldoen aan de criteria.',
       );

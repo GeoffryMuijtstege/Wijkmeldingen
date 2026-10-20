@@ -87,6 +87,14 @@
       "status": "Nieuw",
       "datum": "2026-10-20T19:41:02.498Z",
       "id": "JayI_uzSn3k"
+    },
+    {
+      "titel": "Dronken man schreeuwt door de staat in de nacht",
+      "categorie": "Overlast",
+      "omschrijving": "Elke nacht rond 03:00 staat er een dronken man te schreeuwen in de Tediepinhetglaslaan 16",
+      "status": "Nieuw",
+      "datum": "2026-10-20T19:57:19.434Z",
+      "id": "yHy3_clJHL0"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"
