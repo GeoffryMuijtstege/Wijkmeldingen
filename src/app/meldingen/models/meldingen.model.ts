@@ -1,5 +1,5 @@
 export interface Melding {
-  id: number;
+  id: string;
   titel: string;
   categorie: string;
   status: Status;

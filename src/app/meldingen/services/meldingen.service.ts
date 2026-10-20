@@ -12,21 +12,33 @@ export class MeldingenService {
   getMeldingen(): Observable<Melding[]> {
     return this.http.get<Melding[]>(this.url).pipe(
       catchError((error: HttpErrorResponse) => {
-        console.error(error);
-
-        if (error.status >= 500) {
-          return throwError(() => new Error('Er ging iets mis'));
-        }
-
-        switch (error.status) {
-          case 0:
-            return throwError(() => new Error('Server niet bereikbaar'));
-          case 404:
-            return throwError(() => new Error('Endpoint niet gevonden'));
-          default:
-            return throwError(() => new Error('Onverwachte fout'));
-        }
+        return this.handleError(error);
       }),
     );
+  }
+
+  meldingVersturen(melding: Omit<Melding, 'id'>): Observable<Melding> {
+    return this.http.post<Melding>(this.url, melding).pipe(
+      catchError((error: HttpErrorResponse) => {
+        return this.handleError(error);
+      }),
+    );
+  }
+
+  private handleError(error: HttpErrorResponse) {
+    console.error(error);
+
+    if (error.status >= 500) {
+      return throwError(() => new Error('Er ging iets mis'));
+    }
+
+    switch (error.status) {
+      case 0:
+        return throwError(() => new Error('Server niet bereikbaar'));
+      case 404:
+        return throwError(() => new Error('Endpoint niet gevonden'));
+      default:
+        return throwError(() => new Error('Onverwachte fout'));
+    }
   }
 }

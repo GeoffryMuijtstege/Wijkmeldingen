@@ -1,1 +1,71 @@
-<p>melding-indienen works!</p>
+<main class="container my-4">
+  <h1>Melding indienen</h1>
+
+  @if (fout()) {
+    <div class="alert alert-danger" role="alert">{{ fout() }}</div>
+  }
+
+  <form [formGroup]="form" (ngSubmit)="onSubmit()" novalidate class="d-flex flex-column gap-3">
+    <div class="mb-3">
+      <label for="titel" class="form-label">Titel</label>
+      <input
+        id="titel"
+        type="text"
+        class="form-control"
+        formControlName="titel"
+        [attr.aria-invalid]="toonFout('titel')"
+        [attr.aria-describedby]="toonFout('titel') ? 'fout-titel' : null"
+      />
+      @if (toonFout('titel')) {
+        <div id="fout-titel" class="text-danger" role="alert">
+          Voer een geldige titel in van minimaal 3 tekens.
+        </div>
+      }
+    </div>
+
+    <div class="mb-3">
+      <label for="categorie" class="form-label">Categorie</label>
+      <select
+        id="categorie"
+        class="form-control"
+        formControlName="categorie"
+        [attr.aria-invalid]="toonFout('categorie')"
+        [attr.aria-describedby]="toonFout('categorie') ? 'fout-categorie' : null"
+      >
+        <option value="">Selecteer een categorie</option>
+        @for (c of categorieen; track c) {
+          <option [value]="c">{{ c }}</option>
+        }
+      </select>
+      @if (toonFout('categorie')) {
+        <div id="fout-categorie" class="text-danger" role="alert">
+          Selecteer een geldige categorie.
+        </div>
+      }
+    </div>
+
+    <div class="mb-3">
+      <label for="omschrijving" class="form-label">Omschrijving</label>
+      <textarea
+        id="omschrijving"
+        class="form-control"
+        formControlName="omschrijving"
+        [attr.aria-invalid]="toonFout('omschrijving')"
+        [attr.aria-describedby]="toonFout('omschrijving') ? 'fout-omschrijving' : null"
+      ></textarea>
+      @if (toonFout('omschrijving')) {
+        <div id="fout-omschrijving" class="text-danger" role="alert">
+          Voer een geldige omschrijving in van minimaal 10 tekens.
+        </div>
+      }
+    </div>
+
+    <!-- Status en Datum zetten we bij het versturen van het formulier-->
+
+    <div>
+      <button type="submit" class="btn btn-primary mb-3" [disabled]="formWordVerwerkt()">
+        Indienen
+      </button>
+    </div>
+  </form>
+</main>
