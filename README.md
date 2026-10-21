@@ -16,8 +16,8 @@ ng serve -> Anguler 'watcher' starten
 | Angular        | Standalone components, signals, router, HttpClient                                       | gedaan      |
 | REST/JSON      | json-server, `MeldingenService`                                                          | gedaan      |
 | SCSS/Bootstrap | `styles.scss`                                                                            | gedaan      |
-| WCAG           | Tabel met caption/scope, `aria-sort`, knoppen in headers, aria-invalid, aria-describedby | on going    |
+| WCAG           | Tabel met caption/scope, `aria-sort`, knoppen in headers, aria-invalid, aria-describedby | gedaan      |
 | Reactive Form  | Formulier aangemaakt met Reactive Form waar meldingen in gemaakt kunnen worden           | gedaan      |
-| Testen         |                                                                                          | nog te doen |
+| Testen         | Begonnen met tests in de specs te schrijven.                                             | on going    |
 | Docker         |                                                                                          | nog te doen |
 | Kubernetes     |                                                                                          | nog te doen |
