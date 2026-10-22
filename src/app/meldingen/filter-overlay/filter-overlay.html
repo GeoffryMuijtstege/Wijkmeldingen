@@ -1,6 +1,6 @@
 <div>
   <h2>Filteren</h2>
-  <form class="d-flex flex-column gap-3">
+  <form class="d-flex flex-column gap-3" aria-label="Filter">
     <!--TODO: Filters die geselecteerd zijn altijd laten weergeven als de overlay opnieuw geopend wordt -->
     <div class="form-group">
       <label for="status">Status:</label>
@@ -19,8 +19,22 @@
       </select>
     </div>
     <div class="d-flex gap-2">
-      <button type="button" class="btn btn-primary" (click)="onApply()">Filteren</button>
-      <button type="button" class="btn btn-secondary" (click)="onClose()">Sluiten</button>
+      <button
+        type="button"
+        class="btn btn-primary"
+        (click)="onApply()"
+        aria-label="Filter toepassen"
+      >
+        Filter toepassen
+      </button>
+      <button
+        type="button"
+        class="btn btn-secondary"
+        (click)="onClose()"
+        aria-label="Filter sluiten"
+      >
+        Filter sluiten
+      </button>
     </div>
   </form>
 </div>
