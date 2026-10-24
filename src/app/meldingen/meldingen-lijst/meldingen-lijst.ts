@@ -5,6 +5,7 @@ import { MeldingenService } from '../services/meldingen.service';
 import { Melding, Status } from '../models/meldingen.model';
 import { StatusBadge } from '../status-badge/status-badge';
 import { FilterOverlay, MeldingFilter } from '../filter-overlay/filter-overlay';
+import { catchError, of } from 'rxjs';
 
 const statusVolgorde: Record<Status, number> = {
   [Status.Nieuw]: 0,
@@ -20,8 +21,17 @@ const statusVolgorde: Record<Status, number> = {
 })
 export class MeldingenLijst {
   private meldingenService = inject(MeldingenService);
-  meldingen = toSignal(this.meldingenService.getMeldingen(), { initialValue: [] });
   fout = signal<string | null>(null);
+  meldingen = toSignal(
+    this.meldingenService.getMeldingen().pipe(
+      catchError((e: Error) => {
+        console.log(e.message);
+        this.fout.set(e.message);
+        return of([] as Melding[]);
+      }),
+    ),
+    { initialValue: [] as Melding[] },
+  );
   gesorteerdOpType = signal<keyof Melding>('datum');
   sorteerWaarde = signal<'asc' | 'desc'>('desc');
   filterModalOpen = signal(false);

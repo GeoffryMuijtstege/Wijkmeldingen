@@ -33,7 +33,7 @@ describe('MeldingenService', () => {
       );
     });
 
-    const req = httpMock.expectOne('http://localhost:3000/meldingen');
+    const req = httpMock.expectOne('/api/meldingen');
     expect(req.request.method).toBe('GET');
     req.flush([
       {
@@ -56,7 +56,7 @@ describe('MeldingenService', () => {
     });
 
     httpMock
-      .expectOne('http://localhost:3000/meldingen')
+      .expectOne('/api/meldingen')
       .flush('Endpoint niet gevonden', { status: 404, statusText: 'Not Found' });
   });
 
@@ -69,7 +69,7 @@ describe('MeldingenService', () => {
     });
 
     httpMock
-      .expectOne('http://localhost:3000/meldingen')
+      .expectOne('/api/meldingen')
       .flush('Er ging iets mis', { status: 500, statusText: 'Internal Server Error' });
   });
 
@@ -90,7 +90,7 @@ describe('MeldingenService', () => {
     let resultaat: Melding | undefined;
     service.meldingVersturen(melding).subscribe((m) => (resultaat = m));
 
-    const req = httpMock.expectOne('http://localhost:3000/meldingen');
+    const req = httpMock.expectOne('/api/meldingen');
 
     //Test of die goed verstuurd wordt
     expect(req.request.body).toEqual(melding);

@@ -30,9 +30,7 @@ const MELDINGEN = [
 
 test.describe('meldingenpagina', () => {
   test.beforeEach(async ({ page }) => {
-    await page.route('http://localhost:3000/meldingen', (route) =>
-      route.fulfill({ json: MELDINGEN }),
-    );
+    await page.route('**/api/meldingen', (route) => route.fulfill({ json: MELDINGEN }));
     await page.goto('/meldingen');
     await expect(page.locator('tbody tr')).toHaveCount(3); // wacht tot de data er is
   });

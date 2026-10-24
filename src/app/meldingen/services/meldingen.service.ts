@@ -7,7 +7,7 @@ import { catchError, throwError, Observable } from 'rxjs';
 export class MeldingenService {
   private http = inject(HttpClient);
   //ToDo: Schrijf een service die de omgeving bepaalt, haal hardcoded URL weg (dev, staging, prod)
-  private url = 'http://localhost:3000/meldingen';
+  private url = '/api/meldingen';
 
   getMeldingen(): Observable<Melding[]> {
     return this.http.get<Melding[]>(this.url).pipe(
