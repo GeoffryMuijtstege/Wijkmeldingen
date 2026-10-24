@@ -1,10 +1,10 @@
 services:
-  json_server:
+  json-server:
     image: node:24-alpine
     working_dir: /data
-    volumes: ['./db.json:/data/db.json']
-    command: npx json-server --host 0.0.0.0 --port 3000 db.json
+    volumes: ['./src/app/meldingen/backend:/data']
+    command: npx json-server --host 0.0.0.0 --port 3000 /data/db.json
   frontend:
     build: .
     ports: ['8080:8080']
-    depends_on: ['json_server']
+    depends_on: ['json-server']
