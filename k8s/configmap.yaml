@@ -1,0 +1,107 @@
+﻿apiVersion: v1
+data:
+  db.json: |-
+    {
+      "meldingen": [
+        {
+          "id": "1",
+          "titel": "Geluidsoverlast na middernacht",
+          "categorie": "Overlast",
+          "status": "Nieuw",
+          "datum": "2026-10-12T23:45:00",
+          "omschrijving": "Harde muziek en veel lawaai vanuit een appartement aan de Voorbeeldstraat."
+        },
+        {
+          "id": "2",
+          "titel": "Fiets gestolen bij het station",
+          "categorie": "Diefstal",
+          "status": "In behandeling",
+          "datum": "2026-10-13T08:20:00",
+          "omschrijving": "Zwarte damesfiets met rode fietstassen."
+        },
+        {
+          "id": "3",
+          "titel": "Verdachte persoon bij pinautomaat",
+          "categorie": "Verdacht",
+          "status": "Nieuw",
+          "datum": "2026-10-14T19:10:00",
+          "omschrijving": "Persoon in donkere jas blijft langere tijd bij de pinautomaat staan en kijkt om zich heen. Mogelijk oplichting."
+        },
+        {
+          "id": "4",
+          "titel": "Vernielde bushalte",
+          "categorie": "Vernieling",
+          "status": "Afgehandeld",
+          "datum": "2026-10-09T07:05:00",
+          "omschrijving": "Glazen ruit van de bushalte aan de Hoofdstraat is ingeslagen. Er zijn geen getuigen."
+        },
+        {
+          "id": "5",
+          "titel": "Gevaarlijke verkeerssituatie bij school",
+          "categorie": "Verkeer",
+          "status": "In behandeling",
+          "datum": "2026-10-10T08:35:00",
+          "omschrijving": "Ouders die hun kinderen naar school brengen parkeren op de stoep en blokkeren het zicht voor andere weggebruikers."
+        },
+        {
+          "id": "6",
+          "titel": "Vermiste hond",
+          "categorie": "Vermist",
+          "status": "Nieuw",
+          "datum": "2026-10-15T16:50:00",
+          "omschrijving": "Bruin zwarte labrador, luistert naar de naam 'Max', vermist sinds 15 oktober. Laatste gezien in de buurt van het park."
+        },
+        {
+          "id": "7",
+          "titel": "Graffiti op onderdoorgang",
+          "categorie": "Vernieling",
+          "status": "Nieuw",
+          "datum": "2026-10-16T06:40:00",
+          "omschrijving": "De muren van de fietstunnel zijn volgespoten met graffiti."
+        },
+        {
+          "id": "8",
+          "titel": "Inbraakpoging in schuur",
+          "categorie": "Diefstal",
+          "status": "In behandeling",
+          "datum": "2026-10-11T03:15:00",
+          "omschrijving": "Slot van een tuinschuur is geforceerd. Er lijkt niets te zijn meegenomen. Buurman hoorde rond 03:00 uur geluid."
+        },
+        {
+          "id": "9",
+          "titel": "Hangjongeren bij speeltuin",
+          "categorie": "Overlast",
+          "status": "Afgehandeld",
+          "datum": "2026-10-07T21:30:00",
+          "omschrijving": "Groep jongeren blijft na sluitingstijd in de speeltuin en laat afval achter. Wijkagent heeft een gesprek gevoerd."
+        },
+        {
+          "id": "10",
+          "titel": "Auto rijdt door rood licht",
+          "categorie": "Verkeer",
+          "status": "Nieuw",
+          "datum": "2026-10-17T17:55:00",
+          "omschrijving": "Een personenauto reed bij het kruispunt Marktplein door rood. Een fietser kon op tijd remmen."
+        },
+        {
+          "titel": "Bushokje vernielt",
+          "categorie": "Vernieling",
+          "omschrijving": "De ruit van het bushokje op de Bedachtelaan 33 is ingeslagen",
+          "status": "Nieuw",
+          "datum": "2026-10-20T19:41:02.498Z",
+          "id": "JayI_uzSn3k"
+        },
+        {
+          "titel": "Dronken man schreeuwt door de staat in de nacht",
+          "categorie": "Overlast",
+          "omschrijving": "Elke nacht rond 03:00 staat er een dronken man te schreeuwen in de Tediepinhetglaslaan 16",
+          "status": "Nieuw",
+          "datum": "2026-10-20T19:57:19.434Z",
+          "id": "yHy3_clJHL0"
+        }
+      ],
+      "$schema": "./node_modules/json-server/schema.json"
+    }
+kind: ConfigMap
+metadata:
+  name: json-server-data
