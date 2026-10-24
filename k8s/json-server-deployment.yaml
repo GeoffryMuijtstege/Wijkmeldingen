@@ -3,6 +3,8 @@ kind: Deployment
 metadata:
   name: json-server
 spec:
+  strategy:
+    type: Recreate
   replicas: 1
   selector:
     matchLabels:
@@ -17,11 +19,12 @@ spec:
           configMap:
             name: json-server-data
         - name: data
-          emptyDir: {}
+          persistentVolumeClaim:
+            claimName: json-server-data
       initContainers:
         - name: copy-db
           image: node:24-alpine
-          command: ['cp', '/config/db.json', '/data/db.json']
+          command: ['sh', '-c', '[ -f /data/db.json ] || cp /config/db.json /data/db.json']
           volumeMounts:
             - name: config
               mountPath: /config
